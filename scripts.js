@@ -4,7 +4,7 @@ let timeoutId = null;
 function toggleAprobado(element) {
     if (element.classList.contains('bloqueado')) {
         mostrarMensajeBloqueado(element);
-        return; // Detiene la función si está bloqueado
+        return;
     }
 
     const yaEstabaAprobado = element.classList.contains("aprobado");
@@ -42,7 +42,7 @@ function mostrarMensajeBloqueado(element) {
     
     if (nombresRequisitos.length > 0) {
         mensajeInformativo.textContent = `❌ Requiere aprobar: ${nombresRequisitos.join(', ')}`;
-        mensajeInformativo.className = 'mensaje-informativo visible error'; // Clase para estilo rojo
+        mensajeInformativo.className = 'mensaje-informativo visible error';
 
         if (timeoutId) clearTimeout(timeoutId);
         timeoutId = setTimeout(() => {
