@@ -9,7 +9,7 @@ body {
 
 h1 {
     text-align: center;
-    color: #d63384; 
+    color: #d63384;
     margin-bottom: 30px;
     font-family: 'Playfair Display', serif;
     font-size: 32px;
@@ -40,7 +40,7 @@ h1 {
 
 .semestre h2 {
     text-align: center;
-    color: #e67ab8; 
+    color: #e67ab8;
     margin-bottom: 10px;
 }
 
@@ -66,12 +66,13 @@ h1 {
 
 .aprobado {
     text-decoration: line-through;
-    background: #d63384; 
-    border-left-color: #a6346c; 
+    background: #d63384; /* Rosa fuerte */
+    border-left-color: #a6346c; /* Rosa oscuro */
     color: #fff;
     font-weight: bold;
     animation: pop 0.25s ease;
 }
+
 
 .ramo.bloqueado {
     background-color: #f8f9fa;
@@ -98,6 +99,7 @@ h1 {
     100% { transform: scale(1); }
 }
 
+
 .mensaje-informativo {
     opacity: 0;
     transition: opacity 0.6s ease, background-color 0.3s;
@@ -123,5 +125,5 @@ h1 {
 }
 
 .mensaje-informativo.error {
-    background-color: #dc3545; 
+    background-color: #dc3545;
 }
