@@ -4,7 +4,7 @@ let timeoutId = null;
 function toggleAprobado(element) {
     if (element.classList.contains('bloqueado')) {
         mostrarMensajeBloqueado(element);
-        return; 
+        return; // Detiene la función si está bloqueado
     }
 
     const yaEstabaAprobado = element.classList.contains("aprobado");
@@ -15,12 +15,13 @@ function toggleAprobado(element) {
         animacionPop(element);
     }
 
+
     actualizarEstadoRamos();
 }
 
 function mostrarFelicitacion() {
     mensajeInformativo.textContent = "✨ ¡Felicidades Antonia, eres la mejor! ✨";
-    mensajeInformativo.className = 'mensaje-informativo visible felicitacion'; // Clase para estilo verde
+    mensajeInformativo.className = 'mensaje-informativo visible felicitacion';
 
     if (timeoutId) clearTimeout(timeoutId);
     timeoutId = setTimeout(() => {
@@ -41,7 +42,7 @@ function mostrarMensajeBloqueado(element) {
     
     if (nombresRequisitos.length > 0) {
         mensajeInformativo.textContent = `❌ Requiere aprobar: ${nombresRequisitos.join(', ')}`;
-        mensajeInformativo.className = 'mensaje-informativo visible error'; 
+        mensajeInformativo.className = 'mensaje-informativo visible error'; // Clase para estilo rojo
 
         if (timeoutId) clearTimeout(timeoutId);
         timeoutId = setTimeout(() => {
@@ -62,7 +63,7 @@ function actualizarEstadoRamos() {
 
     todosLosRamos.forEach(ramo => {
         const requisitos = ramo.dataset.requisitos;
-        if (!requisitos) return; 
+        if (!requisitos) return;
 
         const listaRequisitos = requisitos.split(',');
         let todosCumplidos = true;
@@ -79,12 +80,10 @@ function actualizarEstadoRamos() {
             ramo.classList.remove('bloqueado');
         } else {
             ramo.classList.add('bloqueado');
-         
             ramo.classList.remove('aprobado');
         }
     });
 
-    // Guardar el estado después de cada actualización
     guardarEstado();
 }
 
@@ -100,7 +99,7 @@ function guardarEstado() {
 function cargarEstado() {
     const estados = JSON.parse(localStorage.getItem('estadoRamosAntonia') || '[]');
     if (estados.length === 0) {
-        actualizarEstadoRamos(); 
+        actualizarEstadoRamos();
         return;
     }
 
@@ -110,7 +109,6 @@ function cargarEstado() {
             ramo.classList.add('aprobado');
         }
     });
-
 
     actualizarEstadoRamos();
 }
