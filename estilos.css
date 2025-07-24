@@ -2,14 +2,14 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom right, #fff0f5, #ffe4e1); 
+    background: linear-gradient(to bottom right, #fff0f5, #ffe4e1); /* Fondo rosa pálido */
     padding: 20px;
     margin: 0;
 }
 
 h1 {
     text-align: center;
-    color: #d63384;
+    color: #d63384; /* Rosa fuerte */
     margin-bottom: 30px;
     font-family: 'Playfair Display', serif;
     font-size: 32px;
@@ -25,7 +25,7 @@ h1 {
 }
 
 .semestre {
-    background: rgba(255, 255, 255, 0.7); 
+    background: rgba(255, 255, 255, 0.7); /* Blanco semitransparente */
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -40,7 +40,7 @@ h1 {
 
 .semestre h2 {
     text-align: center;
-    color: #e67ab8;
+    color: #e67ab8; /* Rosa medio */
     margin-bottom: 10px;
 }
 
@@ -49,7 +49,7 @@ h1 {
     background: white;
     margin: 6px 0;
     padding: 10px 15px;
-    border-left: 5px solid #f49ac2; 
+    border-left: 5px solid #f49ac2; /* Rosa suave */
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -63,7 +63,7 @@ h1 {
     transform: scale(1.03);
 }
 
-
+/* --- ESTILOS PARA RAMOS APROBADOS --- */
 .aprobado {
     text-decoration: line-through;
     background: #d63384; /* Rosa fuerte */
@@ -73,23 +73,23 @@ h1 {
     animation: pop 0.25s ease;
 }
 
-
+/* --- ESTILOS PARA RAMOS BLOQUEADOS --- */
 .ramo.bloqueado {
     background-color: #f8f9fa;
     border-left-color: #e0e0e0;
     color: #aaa;
     cursor: not-allowed;
-    text-decoration: none; 
+    text-decoration: none; /* Quita el tachado si es que lo tenía */
 }
 
 .ramo.bloqueado:hover {
     transform: none;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); 
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); /* Sombra normal sin brillo */
     background-color: #f8f9fa;
 }
 
 .ramo.bloqueado::before {
-    display: none; 
+    display: none; /* Oculta los brillos en ramos bloqueados */
 }
 
 
@@ -99,7 +99,7 @@ h1 {
     100% { transform: scale(1); }
 }
 
-
+/* Mensaje de felicitación o de error */
 .mensaje-informativo {
     opacity: 0;
     transition: opacity 0.6s ease, background-color 0.3s;
@@ -121,9 +121,9 @@ h1 {
 }
 
 .mensaje-informativo.felicitacion {
-    background-color: #28a745;
+    background-color: #28a745; /* Verde para felicitaciones */
 }
 
 .mensaje-informativo.error {
-    background-color: #dc3545;
+    background-color: #dc3545; /* Rojo para errores de requisitos */
 }
